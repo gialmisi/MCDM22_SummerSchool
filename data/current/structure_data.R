@@ -1,5 +1,5 @@
 library(stringr)
-current <- read.csv("./data/current.csv", stringsAsFactors = FALSE)
+current <- read.csv("./data/current/current_territories.csv", stringsAsFactors = FALSE)
 n_bricks <- 22
 bricks <- paste0("b", 1:n_bricks)
 
@@ -17,7 +17,7 @@ for(i in 1:nrow(current)){
   temp[i,] <- m
 }
 #find workload
-wl <- read.csv("./data/workload.csv", stringsAsFactors = FALSE)
+wl <- read.csv("./data/current/workload.csv", stringsAsFactors = FALSE)
 wl$brick <- paste0('b', wl$brick)
 wl <- setNames(data.frame(t(wl[,-1])), wl[,1])
 temp$sum_wl <- NA
@@ -28,4 +28,4 @@ for(i in 1:nrow(temp)){
   temp$sum_wl[i] <- sum(loads)
 }
 
-write.csv(temp, "./data/data.csv", row.names = FALSE)
+write.csv(temp, "./data/current/formatted_territories.csv", row.names = FALSE)
