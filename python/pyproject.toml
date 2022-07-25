@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "summer_school"
+version = "0.1.0"
+description = ""
+authors = ["Giovanni Misitano <giovanni.misitano@jyu.fi>"]
+
+[tool.poetry.dependencies]
+python = "^3.8, <3.10"
+numpy = "^1.23.1"
+rbfopt = "^4.2.4"
+desdeo-tools = "^1.7.1"
+scipy = "1.8.1"
+matplotlib = "^3.5.2"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^22.6.0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
